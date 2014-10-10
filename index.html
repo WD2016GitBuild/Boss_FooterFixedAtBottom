@@ -10,23 +10,15 @@
 	<textarea name="content" id="content" cols="150" rows="30">
 		<script type="text/javascript">
 			$(function() {
-				var navLi = $("#box_header_sub2 li:not('.home')");
-				navLi.hover(function() {
-					var img = $(this).find("img");
-					var src = img.attr('src');
-					src = src.substring(0, src.lastIndexOf("."));
-					img.attr("src", src+"2.jpg");
-				}, function() {
-					var img = $(this).find("img");
-					var src = img.attr('src');
-					src = src.substring(0, src.lastIndexOf(".")-1);
-					img.attr("src", src+".jpg");
-				});
+				var footer_id = "box_footer";
+				var footer = $("#" + footer_id);
+				footer.hide();
 				setTimeout(function() {
 					if($(document.body).height() <= $(window).height()) {
-					$("#box_footer").css({"position":"fixed","bottom":"0px","left":"0px"});
+						footer.css({"position":"fixed","bottom":"0px","left":"0px"});
 					}
-					}, 300);
+					footer.slideDown();
+				}, 300);
 			});
 		</script>
 	</textarea>
